@@ -6,6 +6,9 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import Welcome from './src/modules/welcome/Welcome';
 import Login from './src/modules/login/Login';
+import MainTab from './src/modules/mainTab/MainTab';
+import ArticleDetail from './src/modules/articleDetail/ArticleDetail';
+import SearchGoods from './src/modules/searchGoods/SearchGoods';
 
 const Stack = createStackNavigator();
 
@@ -34,7 +37,7 @@ function App(): React.JSX.Element {
               ...TransitionPresets.SlideFromRightIOS,
             }}
           />
-          {/*<Stack.Screen
+          <Stack.Screen
             name="MainTab"
             component={MainTab}
             options={{
@@ -57,7 +60,7 @@ function App(): React.JSX.Element {
               headerShown: false,
               presentation: 'transparentModal',
             }}
-          /> */}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

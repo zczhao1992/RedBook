@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   Platform,
 } from 'react-native';
-import {useLocalStore} from 'mobx-react';
+import {useLocalObservable} from 'mobx-react';
 import HomeStore from './HomeStore';
 import {observer} from 'mobx-react';
 import FlowList from '../../components/flowlist/FlowList.js';
@@ -36,7 +36,7 @@ const {appKey} = _updateConfig[Platform.OS];
 const {width: SCREEN_WIDTH} = Dimensions.get('window');
 
 export default observer(() => {
-  const store = useLocalStore(() => new HomeStore());
+  const store = useLocalObservable(() => new HomeStore());
 
   const navigation = useNavigation<StackNavigationProp<any>>();
 

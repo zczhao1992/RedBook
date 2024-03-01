@@ -3,7 +3,7 @@ import {View, Image, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {load} from '../../utils/Storage';
-// import UserStore from '../../stores/UserStore';
+import UserStore from '../../stores/UserStore';
 
 import icon_logo_main from '../../assets/icon_main_logo.png';
 
@@ -23,7 +23,7 @@ export default () => {
     } else {
       const parse = JSON.parse(cacheUserInfo);
       if (parse) {
-        // UserStore.setUserInfo(parse);
+        UserStore.setUserInfo(parse);
         startHome();
       } else {
         startLogin();
